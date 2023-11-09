@@ -23,7 +23,7 @@ For this project we will be observing multiple traffic between Windows virtual M
 
 </p>
 <p>
-First, I created a virtual machine in Azure for Windows 10 called VM-W and another virtual machine Linux(Umbunctu) called VM-L
+First, I created a virtual machine in Azure named "VM-W" for Windows 10, and I also set up another virtual machine, "VM-L," running Linux (Ubuntu).
 </p>
 <br />
 
@@ -31,7 +31,7 @@ First, I created a virtual machine in Azure for Windows 10 called VM-W and anoth
 
 </p>
 <p>
-Sign into VM-W remote desktop with username and password created in Azure and then download Wireshark 
+To access VM-W through remote desktop, you should sign in using the username and password that you created in Azure. After successfully signing in, you can proceed to download and install Wireshark on the virtual machine. 
 </p>
 <br />
 
@@ -39,7 +39,10 @@ Sign into VM-W remote desktop with username and password created in Azure and th
 
 </p>
 <p>
-After wireshark is downloaded, head over to Azure portal and copy VM-L(unbunctu) private IP address which is 10.0.0.5. search for the ICMP traffic in wireshark. Then open up powershell and ping VM-L private IP address. YOu will see the request and reply traffic between VM-W and VM-L private address. 
+
+Once Wireshark has been downloaded and installed, you can go to the Azure portal and locate the private IP address of VM-L (Ubuntu), which is 10.0.0.5. In Wireshark, you should search for ICMP traffic. After that, open PowerShell and initiate a ping command to the private IP address of VM-L. You will be able to observe the request and reply traffic between VM-W and VM-L's private IP address in the Wireshark capture.
+
+
 </p>
 <br />
 
@@ -48,7 +51,7 @@ After wireshark is downloaded, head over to Azure portal and copy VM-L(unbunctu)
 
 </p>
 <p>
-Ping www.youtube.com in powershell and watch the traffic between VM-W private IP address and Youtube public address. You will notice the request and reply signals between VM-W and Youtube.
+In PowerShell, initiate a ping to "www.youtube.com" and observe the network traffic between the private IP address of VM-W and the public address of YouTube. You will be able to observe the request and reply signals exchanged between VM-W and YouTube in the network capture.
 </p>
 <br />
 
@@ -57,7 +60,7 @@ Ping www.youtube.com in powershell and watch the traffic between VM-W private IP
 
 </p>
 <p>
-Use the continuous command line ping 10.0.0.5 -t and ping VM-L private IP address. You will notice that the reply will be continuos.
+By using the continuous command line "ping 10.0.0.5 -t" and targeting the private IP address of VM-L, you will observe that the replies are continuous, indicating an ongoing and persistent ping connection.
 </p>
 <br />
 
@@ -68,7 +71,9 @@ Use the continuous command line ping 10.0.0.5 -t and ping VM-L private IP addres
 ![image](https://github.com/kavismith/network-protocol/assets/143667203/b3e5d3f2-26cf-4eb6-b3d1-77a4a38411d8)
 
 <p>
-  Now, go to azure portal and deny traffic for VM-L by search for network security group in azure and select VM-L and select Inbound security rules. Create a new rule. Change the protocol to ICMP, change the action to Deny and priority to be 200 so it can be first in line out of the other priorities. Once you add the rule, you will notice that the continuous reply will time out. Then go back to VM-L Inbound rule and edit the rule and allow traffic. You will then see the traffic will start to reply again. 
+ Now, navigate to the Azure portal and proceed to deny traffic for VM-L by searching for the network security group and selecting VM-L. Then, select the Inbound security rules and create a new rule. Adjust the protocol to ICMP, change the action to Deny, and set the priority to 200 to ensure it takes precedence over other rules. After adding this rule, you will observe that the continuous replies will time out.
+
+Subsequently, return to VM-L's Inbound rules and edit the rule to allow traffic. Following this adjustment, you will notice that the traffic resumes, and the replies start again. 
 </p>
 <br />
 
@@ -80,7 +85,7 @@ Use the continuous command line ping 10.0.0.5 -t and ping VM-L private IP addres
 
 </p>
 <p>
-Search for SSH protocol in wireshard and go to powershell and type in command SSH labuser@10.0.05 and you will see the host connection could not be established. Type yes to continue the connection and then key in your password to connect to Linux server. Type in exit to disconect from the Linux server.
+Search for SSH protocol in Wireshark, and then, in PowerShell, enter the command "SSH labuser@10.0.0.5." You will receive a message indicating that the host connection could not be established. To proceed, type "yes" to confirm the connection, and then input your password to connect to the Linux server. To disconnect from the Linux server, you can type "exit."
 </p>
 <br />
 
