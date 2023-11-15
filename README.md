@@ -89,7 +89,26 @@ Search for SSH protocol in Wireshark, and then, in PowerShell, enter the command
 </p>
 <br />
 
-![image](https://github.com/kavismith/network-protocol/assets/143667203/440112fe-9637-4438-943b-c15f050be687)
+![image](https://github.com/kavismith/network-protocol/assets/143667203/514dc5d6-a7bc-40f9-af9e-d6b81663084d)
+
+
+</p>
+<p>
+  Search for DHCP traffic in Wireshark. In powershell key in command ipconfig /renew to get VM-L a new IP address. You will see in wireshark that 
+</p>
+<br />
+
+![image](https://github.com/kavismith/network-protocol/assets/143667203/8bd72e6a-96a8-41f1-aa75-fa5a0d629267)
+
+![image](https://github.com/kavismith/network-protocol/assets/143667203/f79fcf61-ca4b-46d5-bba2-4e10b23575fb)
+
+
+</p>
+<p>"Please head back over to VM-W (Windows), open Wireshark, and search for DNS traffic. Additionally, pull up PowerShell and use the command line to perform nslookup for www.netflix.com and www.twitter.com in order to look up their IPv4 addresses. Finally, observe the traffic being transmitted in Wireshark."
+</p>
+<br />
+
+![image](https://github.com/kavismith/network-protocol/assets/143667203/d9229710-2d09-47ea-a399-0eeb909fcba3)
 
 
 </p>
